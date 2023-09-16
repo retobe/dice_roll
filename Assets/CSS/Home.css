@@ -5,6 +5,8 @@ body {
 .container {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  
 }
 
 .person,
@@ -13,7 +15,6 @@ body {
   background: linear-gradient(to right, #52b788, #40916c);
   width: 35rem;
   height: 20rem;
-  margin-top: 5rem;
   margin-left: 5rem;
   border-radius: 50px;
   flex-direction: column;
