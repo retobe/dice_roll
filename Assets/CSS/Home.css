@@ -75,3 +75,28 @@ body {
 .start-btn:hover {
   transform: translate(-50%, 100%) scale(1.2);
 }
+
+
+.restart-btn {
+  display: inline;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 10rem;
+  height: 2rem;
+  border-color: transparent;
+  outline-color: transparent;
+  box-shadow: 0 0 10px;
+  color: #fff;
+  border-radius: 15px;
+  background-color: #606c38;
+  cursor: pointer;
+  transition: .3s all !important;
+}
+
+.restart-btn:hover {
+  transform: translate(-50%, 100%) scale(1.2);
+}
+

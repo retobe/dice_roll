@@ -80,8 +80,12 @@ shuffleArray(people);
 // Retrieve one randomly shuffled person object
 const randomPerson = people[Math.floor(Math.random() * people.length)];
 
-var playerDiceImgElement = document.querySelector("#dice-img2") 
-var personDiceImgElement = document.querySelector("#dice-img") 
+var playerDiceImgElement = document.querySelector("#dice-img2")
+var personDiceImgElement = document.querySelector("#dice-img")
+var startBtn = document.querySelector(".start-btn");
+var restartBtn = document.querySelector(".restart-btn");
+playerDiceImgElement.style.display = "none";
+personDiceImgElement.style.display = "none";
 var nameElement = document.querySelector(".name");
 var imageElement = document.querySelector(".image");
 var trashTalkElement = document.querySelector(".trash-talk");
@@ -95,12 +99,14 @@ var personDice;
 var playerDice;
 
 function rollDice() {
+    startBtn.style.display = "none";
+    restartBtn.style.display = "inline";
     playerDice = Math.ceil((Math.random() * 6));
     playerDiceImg = diceImgs[playerDice];
     playerDiceImgElement.src = playerDiceImg
     personDice = Math.ceil((Math.random() * 6));
     personDiceImg = diceImgs[personDice];
     personDiceImgElement.src = personDiceImg
+    playerDiceImgElement.style.display = "flex";
+    personDiceImgElement.style.display = "flex";
 }
-
-rollDice()
