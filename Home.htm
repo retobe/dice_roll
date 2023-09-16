@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./Assets/CSS/Navbar.css">
-    <link rel="stylesheet" href="./Assets/CSS/Home.css">
+    <link rel="stylesheet" href="./Assets/CSS/Navbar.css" />
+    <link rel="stylesheet" href="./Assets/CSS/Home.css" />
     <script src="./Assets/JS/CallBack.js" defer></script>
     <script src="./Assets/JS/Navbar.js" defer></script>
     <script src="./Assets/JS/Home.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="active" href="#about">About</a></li>
-      </ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="active" href="#about">About</a></li>
+    </ul>
 
-      <!-- actually game -->
+    <!-- actually game -->
 
-      <!--Person container-->
+    <!--Person container-->
+    <div class="container">
       <div class="person">
         <div class="profile-info">
-          <img src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png" alt="profile pic" class="image">
+          <img
+            src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"
+            alt="profile pic"
+            class="image"
+          />
           <h1 class="name">John Doe</h1>
         </div>
-        <p class="trash-talk">HAHAHA YOU SUCK IMMA GONNA WIN THIS</p>
-      </div>      
-</body>
+        <p class="trash-talk" id="result">Turn on js you bih!</p>
+        <img id="dice-img" src="./Assets/images/dice-1.png" alt="dice png" />
+      </div>
+
+      <div class="player">
+        <div class="profile-info">
+          <img
+            src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"
+            alt="profile pic"
+            class="image"
+          />
+          <h1 class="name">You</h1>
+        </div>
+        <p class="trash-talk" id="result">imma gonna lose cuz i suck.</p>
+        <img id="dice-img2" src="" alt="dice png" />
+      </div>
+    </div>
+
+    <button class="start-btn" id="start-btn" onclick="rollDice()">
+      Roll the dice
+    </button>
+
+  </body>
 </html>

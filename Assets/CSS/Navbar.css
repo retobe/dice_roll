@@ -3,7 +3,7 @@
 body {
   background: linear-gradient(to right, #3a5a40 50%, #344e41 50%) fixed;
   font-family: 'Poppins', sans-serif;
-  transition: .3s all;
+  transition: .3s all !important;
 }
 
 ul {
