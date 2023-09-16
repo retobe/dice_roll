@@ -1,5 +1,26 @@
 body {
   transition: .3s all !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.result {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -525%);
+  color: #fff;
+  text-shadow: 0 0 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: small;
+}
+
+.won {
+  color: rgb(33, 148, 33);
+}
+
+.lost {
+  color: red;
 }
 
 .container {
@@ -14,7 +35,7 @@ body {
   display: flex;
   background: linear-gradient(to right, #52b788, #40916c);
   width: 20rem;
-  height: 35rem;
+  height: 30rem;
   margin-top: 5rem;
   border-radius: 50px;
   flex-direction: column;

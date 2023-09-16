@@ -82,12 +82,15 @@ shuffleArray(people);
 // Retrieve one randomly shuffled person object
 const randomPerson = people[Math.floor(Math.random() * people.length)];
 
+var gameResult = document.querySelector("#game_result");
 var playerDiceImgElement = document.querySelector("#dice-img2")
 var personDiceImgElement = document.querySelector("#dice-img")
 var startBtn = document.querySelector(".start-btn");
 var restartBtn = document.querySelector(".restart-btn");
 playerDiceImgElement.style.display = "none";
 personDiceImgElement.style.display = "none";
+
+//person elements
 var nameElement = document.querySelector(".name");
 var imageElement = document.querySelector(".image");
 var trashTalkElement = document.querySelector(".trash-talk");
@@ -115,7 +118,36 @@ function rollDice() {
     playerDiceImgElement.classList.add("fadeIn");
     playerDiceImgElement.style.display = "flex";
     setTimeout(() => {
+        compareDices();
+    }, 1500);
+    setTimeout(() => {
         restartBtn.classList.add("fadeIn");
         restartBtn.style.display = "inline";
     }, 5000)
+}
+
+function compareDices() {
+    var gameAmount = Math.floor(Math.random() * 500) + 100;
+    var userMoney = parseInt(getValue("money"));
+    gameResult.classList.add("fadeIn");
+
+    if (playerDice > personDice) {
+        setValue("money", gameAmount + userMoney);
+        trashTalkElement.textContent = randomPerson.lost;
+        gameResult.classList.add("won");
+        gameResult.innerHTML = `You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You won! +${gameAmount}`;
+    } else if (playerDice < personDice) {
+        if (gameAmount > userMoney) {
+            setValue("money", 0);
+        } else {
+            setValue("money", userMoney - gameAmount);
+        }
+        trashTalkElement.textContent = randomPerson.won;
+        gameResult.classList.add("lost");
+        gameResult.innerHTML = `You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You lost! -${gameAmount}`;
+    } else {
+        trashTalkElement.textContent = randomPerson.lost;
+        gameResult.style.color = "yellow";
+        gameResult.innerHTML = "It's a tie!";
+    }
 }

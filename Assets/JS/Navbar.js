@@ -1,4 +1,6 @@
 const links = document.querySelectorAll('ul li a');
+const balanceElement = document.querySelector("#balance");
+balanceElement.innerHTML = `Balance: $${numberWithCommas(localStorage.getItem("money"))}`;
 let originallyActiveLink;
 
 links.forEach(link => {

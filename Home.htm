@@ -17,6 +17,7 @@
       <li><a href="./Assets/Html/Profile.html">Profile</a></li>
       <li><a href="./Assets/Html/Shop.html">Shop</a></li>
       <li><a href="./Assets/Html/About.htm">About</a></li>
+      <li><a id="balance"></a></li>
     </ul>
 
     <!-- actually game -->
@@ -57,6 +58,10 @@
     <button style="display: none;" class="restart-btn" id="restart-btn" onclick="location.reload()">
       Restart
      </button>
+
+     <div class="result">
+      <h1 id="game_result">You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You won!<br/>+${gameAmount}</h1>
+     </div>
 
   </body>
 </html>
