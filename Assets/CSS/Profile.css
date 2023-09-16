@@ -1,0 +1,95 @@
+body {
+  transition: 0.3s all !important;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.player_submit {
+    height: 25rem !important;
+}
+
+#pre_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 2px 15px rgb(0, 0, 0);
+}
+
+input[type="submit"]{
+    display: block;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b4332;
+    border-color: transparent;
+    outline-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s all !important;
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.2);
+}
+
+.player, .player_submit {
+  display: flex;
+  background: linear-gradient(to right, #52b788, #40916c);
+  width: 20rem;
+  height: 35rem;
+  margin-top: 5rem;
+  border-radius: 50px;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 0 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center; /* Center elements horizontally */
+}
+
+.name {
+  margin-left: 2rem;
+  color: #1b4332;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+#dice-img,
+#dice-img2 {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 10px;
+}
+
+.fadeIn {
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgb(0, 0, 0);
+}
+
+.trash-talk {
+  color: #1b4332;
+  text-shadow: 0 0 15px black;
+}

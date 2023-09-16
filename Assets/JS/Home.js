@@ -1,3 +1,5 @@
+setValues();
+displayPlayer();
 const person1 = {
     name: "John Smith",
     trashTalk: "You think you can beat me? I've been rolling dice since before you were born!",
@@ -100,13 +102,20 @@ var playerDice;
 
 function rollDice() {
     startBtn.style.display = "none";
-    restartBtn.style.display = "inline";
     playerDice = Math.ceil((Math.random() * 6));
     playerDiceImg = diceImgs[playerDice];
     playerDiceImgElement.src = playerDiceImg
     personDice = Math.ceil((Math.random() * 6));
     personDiceImg = diceImgs[personDice];
     personDiceImgElement.src = personDiceImg
+    setTimeout(() => {
+        personDiceImgElement.classList.add("fadeIn");
+        personDiceImgElement.style.display = "flex";
+    }, 1000)
+    playerDiceImgElement.classList.add("fadeIn");
     playerDiceImgElement.style.display = "flex";
-    personDiceImgElement.style.display = "flex";
+    setTimeout(() => {
+        restartBtn.classList.add("fadeIn");
+        restartBtn.style.display = "inline";
+    }, 5000)
 }

@@ -13,8 +13,8 @@ body {
 .player {
   display: flex;
   background: linear-gradient(to right, #52b788, #40916c);
-  width: 35rem;
-  height: 20rem;
+  width: 20rem;
+  height: 35rem;
   margin-top: 5rem;
   border-radius: 50px;
   flex-direction: column;
@@ -31,6 +31,7 @@ body {
   margin-left: 2rem;
   color: #1b4332;
   letter-spacing: 2px;
+  font-size: 20px;
 }
 
 #dice-img,
@@ -40,6 +41,11 @@ body {
   margin: auto;
   border-radius: 20px;
   box-shadow: 0 0 10px;
+}
+
+.fadeIn {
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
 }
 
 .image {
@@ -101,3 +107,12 @@ body {
   transform: translate(-50%, 100%) scale(1.2);
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

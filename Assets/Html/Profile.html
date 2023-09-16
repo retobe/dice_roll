@@ -1,17 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Page</title>
-    <link rel="stylesheet" href="../CSS/Navbar.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../CSS/Navbar.css" />
+    <link rel="stylesheet" href="../CSS/Profile.css" />
+    <script src="../JS/CallBack.js" defer></script>
+    <script src="../JS/Profile.js" defer></script>
+  </head>
+  <body>
     <ul>
-        <li><a href="../../Home.htm">Home</a></li>
-        <li><a class="active" href="#">Profile</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="About.htm">About</a></li>
-      </ul>
-</body>
+      <li><a href="../../Home.htm">Home</a></li>
+      <li><a class="active" href="#">Profile</a></li>
+      <li><a href="Shop.html">Shop</a></li>
+      <li><a href="About.htm">About</a></li>
+    </ul>
+    <div class="container">
+      <div class="player">
+        <h1>Example Profile</h1>
+        <div class="profile-info">
+          <img
+            src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"
+            alt="profile pic"
+            class="image"
+          />
+          <h1 class="name">You</h1>
+        </div>
+        <p class="trash-talk" id="result">imma gonna lose cuz i suck.</p>
+        <img id="dice-img2" src="../images/dice-1.png" alt="dice png" />
+      </div>
+
+      <div class="player_submit">
+        <div class="profile_submit info">
+          <img
+            src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"
+            alt="Pre Img"
+            id="pre_img"
+          />
+          <br />
+          <label for="image_url_submit">Image URL:</label>
+          <input
+            type="text"
+            id="image_url_submit"
+            placeholder="Enter Image URL"
+          />
+          <br /><br />
+          <label for="name_submit">Name:</label>
+          <input
+            type="text"
+            name="name_submit"
+            id="name_submit"
+            placeholder=""
+          />
+          <br /><br />
+          <label for="trash_submit">Trash-talk:</label>
+          <input
+            type="text"
+            name="trash_submit"
+            id="trash_submit"
+            placeholder=""
+          />
+          <br /><br />
+          <input
+            type="submit"
+            class="submit"
+            onclick="submit()"
+            value="Submit"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
