@@ -30,4 +30,8 @@ function setValue(value_name, value_amount) {
 
 function numberWithCommas(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-} 
+}
+
+function reload() {
+  return location.reload()
+}

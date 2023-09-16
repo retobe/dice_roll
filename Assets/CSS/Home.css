@@ -65,7 +65,8 @@ body {
 }
 
 .fadeIn {
-  animation: fadeIn 2s;
+  animation: fadeIn;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 

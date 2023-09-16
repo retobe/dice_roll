@@ -1,20 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop Page</title>
     <link rel="stylesheet" href="../CSS/Navbar.css" />
+    <link rel="stylesheet" href="../CSS/Shop.css" />
     <script src="../JS/CallBack.js" defer></script>
+    <script src="../JS/Shop.js" defer></script>
     <script src="../JS/Navbar.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
+    <!--Nav bar-->
     <ul>
-        <li><a href="../../Home.htm">Home</a></li>
-        <li><a href="Profile.html">Profile</a></li>
-        <li><a class="active" href="#">Shop</a></li>
-        <li><a href="About.htm">About</a></li>
+      <li><a href="../../Home.htm">Home</a></li>
+      <li><a href="Profile.html">Profile</a></li>
+      <li><a class="active" href="#">Shop</a></li>
+      <li><a href="About.htm">About</a></li>
       <li><a id="balance"></a></li>
     </ul>
-</body>
+
+    <div class="container">
+      <div class="item" id="item1">
+        <div class="title">
+          <h1>Skip Cooldown</h1>
+        </div>
+        <div class="description">
+          <p>Tired of waiting? Buy this beautiful item that would let you skip that awful 5 second cooldown.</p>
+        </div>
+        <div class="image"><img src="../images/items/speed_boost.png" alt="Speed item" /></div>
+        <div class="price-info">
+          <div class="price">
+            <h3>$10,000</h3>
+          </div>
+          <div class="button">
+            <button id="speed_boost" onclick="buy(this)" price="10000">Purchase</button>
+          </div>
+        </div>
+      </div>
+      <div class="item" id="item2">
+        <div class="title">
+          <h1>Item2</h1>
+        </div>
+        <div class="description">
+          <p></p>
+        </div>
+        <div class="image"><img src="" alt="" /></div>
+        <div class="price-info">
+          <div class="price">
+            <h3></h3>
+          </div>
+          <div class="button"></div>
+        </div>
+      </div>
+      <div class="item" id="item3">
+        <div class="title">
+          <h1>Item3</h1>
+        </div>
+        <div class="description">
+          <p></p>
+        </div>
+        <div class="image"><img src="" alt="" /></div>
+        <div class="price-info">
+          <div class="price">
+            <h3></h3>
+          </div>
+          <div class="button"></div>
+        </div>
+      </div>
+      <div class="item" id="item4">
+        <div class="title">
+          <h1>Item4</h1>
+        </div>
+        <div class="description">
+          <p></p>
+        </div>
+        <div class="image"><img src="" alt="" /></div>
+        <div class="price-info">
+          <div class="price">
+            <h3></h3>
+          </div>
+          <div class="button"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -102,7 +102,7 @@ trashTalkElement.textContent = randomPerson.trashTalk;
 
 var personDice;
 var playerDice;
-
+var timeOut = 5000;
 function rollDice() {
     startBtn.style.display = "none";
     playerDice = Math.ceil((Math.random() * 6));
@@ -110,20 +110,27 @@ function rollDice() {
     playerDiceImgElement.src = playerDiceImg
     personDice = Math.ceil((Math.random() * 6));
     personDiceImg = diceImgs[personDice];
-    personDiceImgElement.src = personDiceImg
+    personDiceImgElement.src = personDiceImg;
+    var animationDuration = "2s";
+    if (localStorage.getItem("speed_boost") === "true") {
+        timeOut = 500;
+        animationDuration = ".5s";
+    }
     setTimeout(() => {
+        personDiceImgElement.style.animationDuration = animationDuration;
         personDiceImgElement.classList.add("fadeIn");
         personDiceImgElement.style.display = "flex";
     }, 1000)
+    playerDiceImgElement.style.animationDuration = animationDuration;
     playerDiceImgElement.classList.add("fadeIn");
     playerDiceImgElement.style.display = "flex";
     setTimeout(() => {
         compareDices();
-    }, 1500);
+    }, timeOut);
     setTimeout(() => {
         restartBtn.classList.add("fadeIn");
         restartBtn.style.display = "inline";
-    }, 5000)
+    }, timeOut)
 }
 
 function compareDices() {
