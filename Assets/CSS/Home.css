@@ -4,15 +4,16 @@ body {
 }
 
 .result {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -525%);
+  margin: auto;
+  margin-top: 5rem;
+  position: relative;
   color: #fff;
   text-shadow: 0 0 10px;
   text-align: center;
   letter-spacing: 2px;
   font-size: small;
+  align-items: center;
+  justify-content: center;
 }
 
 .won {
@@ -25,13 +26,14 @@ body {
 
 .container {
   display: flex;
+  margin: auto;
   justify-content: space-evenly;
   align-items: center;
-  
 }
 
 .person,
 .player {
+  margin: auto;
   display: flex;
   background: linear-gradient(to right, #52b788, #40916c);
   width: 20rem;

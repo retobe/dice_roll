@@ -111,38 +111,65 @@ function rollDice() {
     personDice = Math.ceil((Math.random() * 6));
     personDiceImg = diceImgs[personDice];
     personDiceImgElement.src = personDiceImg;
-    var animationDuration = "2s";
-    if (localStorage.getItem("speed_boost") === "true") {
-        timeOut = 500;
-        animationDuration = ".5s";
+    var speedBoost = localStorage.getItem("speed_boost") === null ? "false" : localStorage.getItem("speed_boost");
+
+
+    // Set the default animation duration
+    var animationDuration = "3s";
+
+    // If the user has speed_boost, reduce the animation duration to 1s
+    if (speedBoost === "true") {
+        animationDuration = "1s";
     }
+
+    // Set a timeout to run the animation after 1 second (1000 milliseconds)
     setTimeout(() => {
+        // Set the animation duration for personDiceImgElement
         personDiceImgElement.style.animationDuration = animationDuration;
+
+        // Add the fadeIn class to personDiceImgElement
         personDiceImgElement.classList.add("fadeIn");
+
+        // Display personDiceImgElement
         personDiceImgElement.style.display = "flex";
-    }, 1000)
-    playerDiceImgElement.style.animationDuration = animationDuration;
-    playerDiceImgElement.classList.add("fadeIn");
-    playerDiceImgElement.style.display = "flex";
-    setTimeout(() => {
+
+        // Set the animation duration for playerDiceImgElement
+        playerDiceImgElement.style.animationDuration = animationDuration;
+
+        // Add the fadeIn class to playerDiceImgElement
+        playerDiceImgElement.classList.add("fadeIn");
+
+        // Display playerDiceImgElement
+        playerDiceImgElement.style.display = "flex";
+
+        // Call compareDices and restartBtn animations after the appropriate timeout
         compareDices();
-    }, timeOut);
-    setTimeout(() => {
-        restartBtn.classList.add("fadeIn");
-        restartBtn.style.display = "inline";
-    }, timeOut)
+        setTimeout(() => {
+            restartBtn.classList.add("fadeIn");
+            restartBtn.style.display = "inline";
+        }, speedBoost === "true" ? 500 : 5000); // Use 500ms timeout if speed_boost is true, else 1000ms
+    }, 1000);
 }
 
 function compareDices() {
-    var gameAmount = Math.floor(Math.random() * 500) + 100;
+    var gameAmount = Math.floor(Math.random() * 1500) + 500;
     var userMoney = parseInt(getValue("money"));
     gameResult.classList.add("fadeIn");
+    var percentageBoost = localStorage.getItem("percentage_boost") === null ? "false" : localStorage.getItem("percentage_boost");
 
+    var difference = Math.abs(playerDice - personDice);
+    difference *= 10
+    var percentWon = difference + Math.floor(Math.random() * 50) + 1;
+    console.log(gameAmount)
     if (playerDice > personDice) {
+        if (percentageBoost === "true") {
+            gameAmount = Math.floor(gameAmount + (percentWon / 100 * gameAmount));
+            console.log(gameAmount)
+        }
         setValue("money", gameAmount + userMoney);
         trashTalkElement.textContent = randomPerson.lost;
         gameResult.classList.add("won");
-        gameResult.innerHTML = `You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You won! +${gameAmount}`;
+        gameResult.innerHTML = `You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You won! +${gameAmount} (${percentWon}% boost)`;
     } else if (playerDice < personDice) {
         if (gameAmount > userMoney) {
             setValue("money", 0);

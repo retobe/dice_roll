@@ -23,10 +23,20 @@ function buy(element) {
             } else {
                 setValue("money", userMoney - itemPrice);
                 setValue("speed_boost", "true");
-                alert("Successfully.");
+                alert("Successful.");
                 reload();
             }
             break;
+        case "percentage_boost":
+            if (userMoney < itemPrice) {
+                alert("You don't have enough money to buy this!");
+                reload();
+            } else {
+                setValue("money", userMoney - itemPrice);
+                setValue("percentage_boost", "true");
+                alert("Successful.");
+                reload();
+            }
         default:
             break;
     }

@@ -21,7 +21,25 @@
   width: 28rem;
   margin: auto;
   padding: 10px;
+  text-shadow: 0 0 5px;
 }
+
+#item1 {
+  background: linear-gradient(#e63946, #f1faee);
+}
+
+#item2 {
+  background: linear-gradient(green, yellow);
+}
+
+#item3 {
+  background: linear-gradient(#2a9d8f, #e9c46a);
+}
+
+#item4 {
+  background: linear-gradient(#ca6702, #bb3e03);
+}
+
 
 .image img {
     height: 300px;
@@ -47,6 +65,10 @@
     font-size: large;
 }
 
+.description {
+  font-size: large;
+}
+
 .buy:hover {
     transform: scale(0.9);
 }
@@ -70,7 +92,7 @@ button {
 }
 
 .boughtP {
-    background: rgba(32, 0, 64, 0.249);
+    background: rgba(32, 0, 64, 0.249) !important;
 }
 
 .bought {
