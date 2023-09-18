@@ -162,14 +162,14 @@ function compareDices() {
     var percentWon = difference + Math.floor(Math.random() * 50) + 1;
     console.log(gameAmount)
     if (playerDice > personDice) {
-        if (percentageBoost === "true") {
+            if (percentageBoost === "true") {
             gameAmount = Math.floor(gameAmount + (percentWon / 100 * gameAmount));
-            console.log(gameAmount)
+            console.log(gameAmount, percentageBoost)
         }
         setValue("money", gameAmount + userMoney);
         trashTalkElement.textContent = randomPerson.lost;
         gameResult.classList.add("won");
-        gameResult.innerHTML = `You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You won! +${gameAmount} (${percentWon}% boost)`;
+        gameResult.innerHTML = percentageBoost === "true" ? `You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You won! +${gameAmount} (${percentWon}% boost)` : `You rolled ${playerDice}, ${randomPerson.name} rolled a ${personDice}. You won! +${gameAmount}`;
     } else if (playerDice < personDice) {
         if (gameAmount > userMoney) {
             setValue("money", 0);
