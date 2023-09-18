@@ -33,7 +33,7 @@
 }
 
 #item3 {
-  background: linear-gradient(#2a9d8f, #e9c46a);
+  background: linear-gradient(#2a9d8f, #a1cc5c);
 }
 
 #item4 {
@@ -67,6 +67,7 @@
 
 .description {
   font-size: large;
+  text-align: center;
 }
 
 .buy:hover {
