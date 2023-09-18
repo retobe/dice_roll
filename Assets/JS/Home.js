@@ -167,5 +167,3 @@ function rollDice() {
     ); // Use 500ms timeout if speed_boost is true, else 1000ms
   }, 1000);
 }
-
-

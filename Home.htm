@@ -38,6 +38,16 @@
         <img id="dice-img" src="./Assets/images/dice-1.png" alt="dice png" />
       </div>
 
+      <div class="btns-container">
+        <button class="start-btn" id="start-btn" onclick="rollDice()">
+          Roll the dice
+        </button>
+    
+        <button style="display: none;" class="restart-btn" id="restart-btn" onclick="location.reload()">
+          Restart
+         </button>
+      </div>
+
       <div class="player">
         <div class="profile-info">
           <img
@@ -51,17 +61,12 @@
         <img id="dice-img2" src="" alt="dice png" />
       </div>
     </div>
+    <br><br>
     <div class="result">
      <h1 id="game_result"></h1>
     </div>
 
-    <button class="start-btn" id="start-btn" onclick="rollDice()">
-      Roll the dice
-    </button>
 
-    <button style="display: none;" class="restart-btn" id="restart-btn" onclick="location.reload()">
-      Restart
-     </button>
 
   </body>
 </html>
