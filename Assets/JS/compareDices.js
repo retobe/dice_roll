@@ -19,7 +19,7 @@ function compareDices() {
   var percentWon = difference + Math.floor(Math.random() * 50) + 1;
   var streakBoostmsg;
   var Percentmsg;
-  
+
   //Player Won
   if (playerDice > personDice) {
     streak += 1;
@@ -44,11 +44,6 @@ function compareDices() {
     setValue("money", gameAmount + userMoney);
     trashTalkElement.textContent = randomPerson.lost;
     gameResult.classList.add("won");
-    console.log("msg:", msg);
-    console.log("percentMsg:", Percentmsg);
-    console.log("streakBonus:", streakBonus);
-    console.log("streakBoostmsg:", streakBoostmsg);
-    console.log("percentageBoost:", percentageBoost);
 
     gameResult.innerHTML =
       msg +
