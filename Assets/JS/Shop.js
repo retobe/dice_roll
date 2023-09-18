@@ -14,7 +14,7 @@ btns.forEach((btn) => {
 function buy(element) {
   var item = element.id;
   var userMoney = parseInt(getValue("money"));
-  var itemPrice = element.getAttribute("price");
+  var itemPrice = parseInt(element.getAttribute("price"));
   switch (item) {
     case "speed_boost":
       if (userMoney < itemPrice) {
@@ -37,6 +37,7 @@ function buy(element) {
         alert(`Successfully bought ${item.replace("_", " ")}`);
         reload();
       }
+      break;
     case "streak_bonus":
       if (userMoney < itemPrice) {
         alert("You don't have enough money to buy this!");
@@ -48,6 +49,7 @@ function buy(element) {
         reload();
       }
     default:
+      console.error("Invalid ITEM.ID")
       break;
   }
 }

@@ -28,7 +28,7 @@ function getValue(value_name) {
 }
 
 function setValue(value_name, value_amount) {
-  localStorage.setItem(value_name, value_amount);
+  return localStorage.setItem(value_name, value_amount);
 }
 
 function numberWithCommas(num) {
