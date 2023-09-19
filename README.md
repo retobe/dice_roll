@@ -1,2 +1,2 @@
-# gamble_sims
-Cool gambling simulator
+# dice_roll
+Cool Dice game 
